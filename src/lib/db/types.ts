@@ -65,6 +65,12 @@ export interface Database {
           {
             foreignKeyName: "admin_info_user_id_fkey"
             columns: ["user_id"]
+            referencedRelation: "registration"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "admin_info_user_id_fkey"
+            columns: ["user_id"]
             referencedRelation: "status"
             referencedColumns: ["user_id"]
           }
@@ -133,6 +139,12 @@ export interface Database {
             foreignKeyName: "alumni_info_user_id_fkey"
             columns: ["user_id"]
             referencedRelation: "profile"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "alumni_info_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "registration"
             referencedColumns: ["user_id"]
           },
           {
@@ -218,6 +230,12 @@ export interface Database {
             foreignKeyName: "applicant_education_user_id_fkey"
             columns: ["user_id"]
             referencedRelation: "profile"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "applicant_education_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "registration"
             referencedColumns: ["user_id"]
           },
           {
@@ -317,6 +335,12 @@ export interface Database {
           {
             foreignKeyName: "applicant_experience_user_id_fkey"
             columns: ["user_id"]
+            referencedRelation: "registration"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "applicant_experience_user_id_fkey"
+            columns: ["user_id"]
             referencedRelation: "status"
             referencedColumns: ["user_id"]
           }
@@ -364,6 +388,12 @@ export interface Database {
             foreignKeyName: "applicant_skills_user_id_fkey"
             columns: ["user_id"]
             referencedRelation: "profile"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "applicant_skills_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "registration"
             referencedColumns: ["user_id"]
           },
           {
@@ -419,6 +449,12 @@ export interface Database {
             foreignKeyName: "job_application_user_id_fkey"
             columns: ["user_id"]
             referencedRelation: "profile"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "job_application_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "registration"
             referencedColumns: ["user_id"]
           },
           {
@@ -510,6 +546,12 @@ export interface Database {
             foreignKeyName: "job_post_user_id_fkey"
             columns: ["user_id"]
             referencedRelation: "profile"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "job_post_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "registration"
             referencedColumns: ["user_id"]
           },
           {
@@ -631,6 +673,12 @@ export interface Database {
           {
             foreignKeyName: "recruiter_info_user_id_fkey"
             columns: ["user_id"]
+            referencedRelation: "registration"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "recruiter_info_user_id_fkey"
+            columns: ["user_id"]
             referencedRelation: "status"
             referencedColumns: ["user_id"]
           }
@@ -723,6 +771,12 @@ export interface Database {
             foreignKeyName: "student_info_user_id_fkey"
             columns: ["user_id"]
             referencedRelation: "profile"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "student_info_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "registration"
             referencedColumns: ["user_id"]
           },
           {
@@ -912,6 +966,12 @@ export interface Database {
           {
             foreignKeyName: "job_post_user_id_fkey"
             columns: ["user_id"]
+            referencedRelation: "registration"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "job_post_user_id_fkey"
+            columns: ["user_id"]
             referencedRelation: "status"
             referencedColumns: ["user_id"]
           }
@@ -929,6 +989,36 @@ export interface Database {
           user_id: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "user_login_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "user_login_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "authenticate"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      registration: {
+        Row: {
+          email: string | null
+          is_approved: boolean | null
+          name: string | null
+          role_id: number | null
+          status: string | null
+          user_id: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_login_role_id_fkey"
+            columns: ["role_id"]
+            referencedRelation: "roles"
+            referencedColumns: ["role_id"]
+          },
           {
             foreignKeyName: "user_login_user_id_fkey"
             columns: ["user_id"]
