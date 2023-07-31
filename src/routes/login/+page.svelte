@@ -49,6 +49,7 @@
                             label:'display:none;'}
                             }}
                 />
+                <a href="signup" class="text-[#FFF] hover:text-[#EADDCA]">Dont have any account? Sign Up</a>
             </div>
         </div>
     </div>
