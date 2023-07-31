@@ -40,12 +40,12 @@ export const deleteJobPost = async (id, uid) => {
     if(error) return error;
 }
  
-export const Registrations: Writable<Array<Database['public']['Tables']['user_login']['Row']>> = writable()
+export const Registrations: Writable<Array<Database['public']['Views']['registration']['Row']>> = writable()
  
 export const loadRegistration = async () => {
     
     const { data, error } = await supabase
-    .from('user_login')
+    .from('registration')
     .select('*')
     
     if(error) return error;

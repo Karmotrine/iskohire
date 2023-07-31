@@ -56,7 +56,7 @@
         <span class="rounded-full bg-[#abc] pt-[12px] pb-[12px] pr-[20px] pl-[20px] inline-block align-middle">PENDING </span>
     </div>
         {#each $Registrations.filter((val) => !val.is_approved) as post}
-        <div class="relative min-h-[2em] h-[6em] overflow-y-auto border border-gray-300 bg-white shadow-md w-[90%] ml-[5%] max-w-screen flex-auto flex-column p-3 mb-5 card mr-5">
+        <div class="relative min-h-[2em] h-[10em] overflow-y-auto border border-gray-300 bg-white shadow-md w-[90%] ml-[5%] max-w-screen flex-auto flex-column p-3 mb-5 card mr-5">
             <div class="flex-auto flex-column">
                 <div class="text-black font-inter font-bold text-xl">{post.user_id}</div>
                 {#if post.role_id == 1}
@@ -66,7 +66,9 @@
                 {:else if post.role_id == 3}
                 <div class="text-black font-inter font-italic leading-3 text-xs">RECRUITER</div>
                 {/if}
-
+                <br>
+                <div class="text-black font-inter text-l">{post.name}</div>
+                <div class="text-black font-inter text-l">{post.email}</div>
                 
             </div>
             <div class="absolute bottom-[12px] right-[12px]">
@@ -80,7 +82,7 @@
             <span class="rounded-full bg-[#9f9] pt-[12px] pb-[12px] pr-[20px] pl-[20px] inline-block align-middle">ACCEPTED</span>
         </div>
         {#each $Registrations.filter((val) => val.is_approved) as post}
-        <div class="relative min-h-[2em] h-[6em] overflow-y-auto border border-gray-300 bg-white shadow-md w-[90%] ml-[5%] max-w-screen flex-auto flex-column p-3 mb-5 card mr-5">
+        <div class="relative min-h-[2em] h-[10em] overflow-y-auto border border-gray-300 bg-white shadow-md w-[90%] ml-[5%] max-w-screen flex-auto flex-column p-3 mb-5 card mr-5">
             <div class="flex-auto flex-column">
                 <div class="text-black font-inter font-bold text-xl">{post.user_id}</div>
                 {#if post.role_id == 1}
@@ -90,6 +92,9 @@
                 {:else if post.role_id == 3}
                 <div class="text-black font-inter font-italic leading-3 text-xs">RECRUITER</div>
                 {/if}
+                <br>
+                <div class="text-black font-inter text-l">{post.name}</div>
+                <div class="text-black font-inter text-l">{post.email}</div>
 
                 
             </div>
