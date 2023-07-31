@@ -32,7 +32,7 @@
   });
 
   import {page} from '$app/stores'
-
+  let showSubMenu = false;
 </script>
 
 <AppShell>
@@ -59,19 +59,25 @@
       </svelte:fragment>
     </AppBar>
   </svelte:fragment>
-
+  
   <slot />
   <svelte:fragment slot="sidebarLeft">
-    <div
-      id="sidebar-left"
-      class="flex flex-col h-full w-full bg-[white] justify-between shadow"
-    >
+    <div id="sidebar-left" class="flex flex-col h-full w-full bg-[white] justify-between shadow">
       <div class="container flex flex-col bg-[EDECEC]">
-        <a href="../register" class="flex" class:active={$page.url.pathname === "/register" ? "bg-[white]" : ""}>
-          <img src="./images/register-confirm.png" alt="add exp" class="h-6 mr-3" />
-          Register Confirm
-        </a>
-        <a href="../job" class=" flex" class:active={$page.url.pathname === "/job" ? "bg-[white]" : ""}>
+        <div class="relative">
+          <button class="flex items-center p-3" on:click={() => showSubMenu = !showSubMenu}>
+            <img src="./images/register-confirm.png" alt="add exp" class="h-6 mr-3 ml-1" />
+            Register Confirm
+          </button>
+          {#if showSubMenu}
+            <div class="ml-1">
+              <a href="../studentreg" class="block py-2 hover:bg-gray-100" class:active={$page.url.pathname === "/studentreg" ? "bg-[white]" : ""}>Student</a>
+              <a href="../alumnireg" class="block py-2 hover:bg-gray-100" class:active={$page.url.pathname === "/alumnireg" ? "bg-[white]" : ""}>Alumni</a>
+              <a href="../employerreg" class="block py-2 hover:bg-gray-100" class:active={$page.url.pathname === "/employerreg" ? "bg-[white]" : ""}>Employer</a>
+            </div>
+          {/if}
+        </div>
+        <a href="../job" class="flex" class:active={$page.url.pathname === "/job" ? "bg-[white]" : ""}>
           <img src="./images/job-confirm.png" alt="add edu" class="h-6 mr-3" />
           Job Confirm
         </a>
