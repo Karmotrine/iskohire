@@ -59,7 +59,7 @@
       </svelte:fragment>
     </AppBar>
   </svelte:fragment>
-
+  
   <slot />
   <svelte:fragment slot="sidebarLeft">
     <div id="sidebar-left" class="flex flex-col h-full w-full bg-[white] justify-between shadow">
