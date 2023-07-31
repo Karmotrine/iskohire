@@ -29,7 +29,7 @@ export const actions = {
         const grade = parseInt(grade1, 10);
 
         const is_finished = "true"; // true, wala sa input field
-        const role_id = 1 // laging 1, kasi student
+        const role_id = 2 // laging 1, kasi student
 
         const school = formData.get('school') as string
 
