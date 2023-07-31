@@ -43,14 +43,12 @@ export const loadStudent = async () => {
 
 
 export const loadApplicant = async (uid) => {
-    uid
     const { data, error } = await supabase
     .from('profile')
     .select('*')
     .eq('user_id', uid)
-    .single();
-
     if(error) return error;
-
-    ApplicantInfo.set(data)
+    else{
+        ApplicantInfo.set(data[0])
+    }
 }

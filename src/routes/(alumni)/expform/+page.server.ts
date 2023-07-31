@@ -29,7 +29,7 @@ export const actions = {
 
         const loc = formData.get('loc') as string 
         const loctype = formData.get('loctype') as string
-        const role_id: number = 1;
+        const role_id: number = 2;
         const startDate = formData.get('startDate') as string 
 
         const user_skill = formData.get('skills') as string

@@ -12,6 +12,8 @@ import { loadApplicant } from "$lib/stores/student/student_store";
   let postsError: PostgrestError | undefined  
   let applicationError: PostgrestError | undefined
   onMount(async () => {
+      Applications.update(() => [])
+      JobPosts.update(() => [])
       postsError = await loadPosts()
       JobPosts.subscribe(() => {
           isPostsLoading = false
